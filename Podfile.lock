@@ -1,0 +1,46 @@
+PODS:
+  - Kingfisher (7.6.2)
+  - ReachabilitySwift (5.0.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SnackBar.swift (0.1.0):
+    - SnapKit
+  - SnapKit (5.6.0)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - Kingfisher (~> 7.0)
+  - ReachabilitySwift
+  - RxCocoa
+  - RxSwift
+  - SnackBar.swift
+  - Toast-Swift (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - ReachabilitySwift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SnackBar.swift
+    - SnapKit
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SnackBar.swift: 79ea4df13ea9e6633137dd6acbd490534d26440d
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 937618f5392bf0b082fe1ab8f6f166f8354d4529
+
+COCOAPODS: 1.12.0
