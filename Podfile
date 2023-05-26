@@ -3,7 +3,6 @@
 target 'Technical-Workshop' do
    pod 'Kingfisher', '~> 7.0'
    pod 'ReachabilitySwift'
-   pod 'Toast-Swift', '~> 5.0.0'
    pod 'RxSwift'
    pod 'RxCocoa'
    pod 'SnackBar.swift'

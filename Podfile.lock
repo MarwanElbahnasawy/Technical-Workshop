@@ -12,7 +12,6 @@ PODS:
   - SnackBar.swift (0.1.0):
     - SnapKit
   - SnapKit (5.6.0)
-  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -22,7 +21,6 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SnackBar.swift
-  - Toast-Swift (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
@@ -35,7 +33,6 @@ SPEC REPOS:
     - RxSwift
     - SnackBar.swift
     - SnapKit
-    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
@@ -47,8 +44,7 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnackBar.swift: 79ea4df13ea9e6633137dd6acbd490534d26440d
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 54ce4006e5a3428841c83b1c6cac6809fdab6616
+PODFILE CHECKSUM: 3843e6837baf477eb97c01e77f0868bbd7476865
 
 COCOAPODS: 1.12.0
