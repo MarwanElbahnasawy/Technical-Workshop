@@ -20,6 +20,10 @@
 		178484E72A20A2190002D108 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484E62A20A2190002D108 /* HomeScreenViewModel.swift */; };
 		178484E92A20A2250002D108 /* FavoritesScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484E82A20A2250002D108 /* FavoritesScreenViewModel.swift */; };
 		178484EB2A20A2320002D108 /* DetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484EA2A20A2320002D108 /* DetailsScreenViewModel.swift */; };
+		178484EE2A20B5B20002D108 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484ED2A20B5B20002D108 /* CategoryItem.swift */; };
+		178484F02A20B5EC0002D108 /* CategoryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484EF2A20B5EC0002D108 /* CategoryImage.swift */; };
+		178484F22A20B74A0002D108 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484F12A20B74A0002D108 /* CategoryCollectionViewCell.swift */; };
+		178484F82A20D4F30002D108 /* HomeScreenViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484F72A20D4F30002D108 /* HomeScreenViewModelType.swift */; };
 		17FF173B2A1F68D900E6A365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF173A2A1F68D900E6A365 /* AppDelegate.swift */; };
 		17FF173D2A1F68D900E6A365 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF173C2A1F68D900E6A365 /* SceneDelegate.swift */; };
 		17FF17452A1F68D900E6A365 /* Technical_Workshop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17FF17432A1F68D900E6A365 /* Technical_Workshop.xcdatamodeld */; };
@@ -86,6 +90,10 @@
 		178484E62A20A2190002D108 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		178484E82A20A2250002D108 /* FavoritesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScreenViewModel.swift; sourceTree = "<group>"; };
 		178484EA2A20A2320002D108 /* DetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenViewModel.swift; sourceTree = "<group>"; };
+		178484ED2A20B5B20002D108 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
+		178484EF2A20B5EC0002D108 /* CategoryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImage.swift; sourceTree = "<group>"; };
+		178484F12A20B74A0002D108 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		178484F72A20D4F30002D108 /* HomeScreenViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelType.swift; sourceTree = "<group>"; };
 		17A313B067C975F6E36B0BEA /* Pods_Technical_Workshop_Technical_WorkshopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Technical_Workshop_Technical_WorkshopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF17372A1F68D900E6A365 /* Technical-Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Technical-Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF173A2A1F68D900E6A365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +177,7 @@
 		178484BC2A209D600002D108 /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
+				178484EC2A20B5A10002D108 /* Models */,
 				178484C42A209E9D0002D108 /* View */,
 				178484C32A209E8E0002D108 /* ViewModel */,
 			);
@@ -236,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				178484E62A20A2190002D108 /* HomeScreenViewModel.swift */,
+				178484F72A20D4F30002D108 /* HomeScreenViewModelType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -246,6 +256,7 @@
 				3F63E5CC2A20A95B00E0E790 /* Meal Cell */,
 				178484D62A20A1800002D108 /* HomeScreenStoryboard.storyboard */,
 				178484DC2A20A1CA0002D108 /* HomeScreenViewController.swift */,
+				178484F12A20B74A0002D108 /* CategoryCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +339,15 @@
 		178484D32A209F880002D108 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		178484EC2A20B5A10002D108 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				178484ED2A20B5B20002D108 /* CategoryItem.swift */,
+				178484EF2A20B5EC0002D108 /* CategoryImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -704,8 +724,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				178484BA2A209D100002D108 /* Constants.swift in Sources */,
+				178484F22A20B74A0002D108 /* CategoryCollectionViewCell.swift in Sources */,
 				178484EB2A20A2320002D108 /* DetailsScreenViewModel.swift in Sources */,
 				178484E12A20A1E60002D108 /* DetailsScreenViewController.swift in Sources */,
+				178484F02A20B5EC0002D108 /* CategoryImage.swift in Sources */,
 				178484E52A20A20F0002D108 /* LaunchScreenViewModel.swift in Sources */,
 				178484E32A20A1F80002D108 /* LaunchScreenViewController.swift in Sources */,
 				3F63E5D02A20AE0A00E0E790 /* MealCollectionViewCell.swift in Sources */,
@@ -713,10 +735,12 @@
 				178484DF2A20A1DB0002D108 /* FavoritesScreenViewController.swift in Sources */,
 				17FF17452A1F68D900E6A365 /* Technical_Workshop.xcdatamodeld in Sources */,
 				178484E92A20A2250002D108 /* FavoritesScreenViewModel.swift in Sources */,
+				178484EE2A20B5B20002D108 /* CategoryItem.swift in Sources */,
 				17FF173D2A1F68D900E6A365 /* SceneDelegate.swift in Sources */,
 				3F63E5CE2A20ACA800E0E790 /* UIImageGradient.swift in Sources */,
 				178484DD2A20A1CA0002D108 /* HomeScreenViewController.swift in Sources */,
 				178484E72A20A2190002D108 /* HomeScreenViewModel.swift in Sources */,
+				178484F82A20D4F30002D108 /* HomeScreenViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,10 +912,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CV64V222GG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Technical-Workshop/Info.plist";
+				INFOPLIST_FILE = "Technical-Workshop/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = HomeScreenStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -917,10 +941,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CV64V222GG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Technical-Workshop/Info.plist";
+				INFOPLIST_FILE = "Technical-Workshop/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = HomeScreenStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
