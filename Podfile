@@ -8,6 +8,7 @@ target 'Technical-Workshop' do
    pod 'SnackBar.swift'
 pod 'Alamofire'
 pod 'IQKeyboardManagerSwift'
+pod 'lottie-ios'
 
   use_frameworks!
   # Pods for Technical-Workshop
