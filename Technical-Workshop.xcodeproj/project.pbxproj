@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144720B32A20DFE900106C75 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144720B22A20DFE900106C75 /* Models.swift */; };
+		144720B62A20DFF300106C75 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144720B42A20DFF300106C75 /* APIServices.swift */; };
+		144720B72A20DFF300106C75 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144720B52A20DFF300106C75 /* NetworkManagerProtocol.swift */; };
 		178484BA2A209D100002D108 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484B92A209D100002D108 /* Constants.swift */; };
 		178484D52A20A16D0002D108 /* LaunchScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 178484D42A20A16D0002D108 /* LaunchScreenStoryboard.storyboard */; };
 		178484D72A20A1800002D108 /* HomeScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 178484D62A20A1800002D108 /* HomeScreenStoryboard.storyboard */; };
@@ -52,6 +55,9 @@
 
 /* Begin PBXFileReference section */
 		02F17445B1AA865313358C41 /* Pods-Technical-Workshop-Technical-WorkshopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technical-Workshop-Technical-WorkshopUITests.debug.xcconfig"; path = "Target Support Files/Pods-Technical-Workshop-Technical-WorkshopUITests/Pods-Technical-Workshop-Technical-WorkshopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		144720B22A20DFE900106C75 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Models/Models.swift; sourceTree = SOURCE_ROOT; };
+		144720B42A20DFF300106C75 /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIServices.swift; path = Remote/APIServices.swift; sourceTree = SOURCE_ROOT; };
+		144720B52A20DFF300106C75 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManagerProtocol.swift; path = Remote/NetworkManagerProtocol.swift; sourceTree = SOURCE_ROOT; };
 		178484B92A209D100002D108 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		178484D42A20A16D0002D108 /* LaunchScreenStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenStoryboard.storyboard; sourceTree = "<group>"; };
 		178484D62A20A1800002D108 /* HomeScreenStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreenStoryboard.storyboard; sourceTree = "<group>"; };
@@ -270,6 +276,8 @@
 		178484D02A209F090002D108 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				144720B42A20DFF300106C75 /* APIServices.swift */,
+				144720B52A20DFF300106C75 /* NetworkManagerProtocol.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -284,6 +292,7 @@
 		178484D32A209F880002D108 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				144720B22A20DFE900106C75 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -606,6 +615,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				178484BA2A209D100002D108 /* Constants.swift in Sources */,
+				144720B32A20DFE900106C75 /* Models.swift in Sources */,
 				178484EB2A20A2320002D108 /* DetailsScreenViewModel.swift in Sources */,
 				178484E12A20A1E60002D108 /* DetailsScreenViewController.swift in Sources */,
 				178484E52A20A20F0002D108 /* LaunchScreenViewModel.swift in Sources */,
@@ -616,6 +626,8 @@
 				178484E92A20A2250002D108 /* FavoritesScreenViewModel.swift in Sources */,
 				17FF173D2A1F68D900E6A365 /* SceneDelegate.swift in Sources */,
 				178484DD2A20A1CA0002D108 /* HomeScreenViewController.swift in Sources */,
+				144720B62A20DFF300106C75 /* APIServices.swift in Sources */,
+				144720B72A20DFF300106C75 /* NetworkManagerProtocol.swift in Sources */,
 				178484E72A20A2190002D108 /* HomeScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
