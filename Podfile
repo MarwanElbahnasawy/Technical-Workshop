@@ -7,6 +7,8 @@ target 'Technical-Workshop' do
    pod 'RxSwift'
    pod 'RxCocoa'
    pod 'SnackBar.swift'
+pod 'Alamofire'
+pod 'IQKeyboardManagerSwift'
 
   use_frameworks!
   # Pods for Technical-Workshop
