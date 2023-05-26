@@ -10,7 +10,7 @@ import UIKit
 class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
-    @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet weak var mealsCollectionView: UICollectionView!
     
     private lazy var viewModel: HomeScreenViewModelType = {
         HomeScreenViewModel()
@@ -18,38 +18,66 @@ class HomeScreenViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        mealsCollectionView.register(UINib(nibName: Constants.mealCellNibAndIdentifierName, bundle: .main), forCellWithReuseIdentifier: Constants.mealCellNibAndIdentifierName)
     }
 }
 
 extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    // MARK: Collection View Callback Methods
+    
+    // MARK: Collection View: Number of items in section
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.categoryItemsCount
+        if collectionView == self.categoriesCollectionView {
+            return viewModel.categoryItemsCount
+        } else{
+            return viewModel.mealsItemsCount
+        }
     }
+   
+    // MARK: Collection View: Configuring cells
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CategoryCollectionViewCell
-        let currentCategoryItem = viewModel.categoryItem(at: indexPath.row)
-        cell.configure(categoryItem: currentCategoryItem)
-        return cell
+        
+        if collectionView == self.categoriesCollectionView {
+            let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.categoriesCollectionViewCell, for: indexPath) as! CategoryCollectionViewCell
+            let currentCategoryItem = viewModel.categoryItem(at: indexPath.row)
+            if indexPath.row == 0 {
+                cell.configure(categoryItem: currentCategoryItem, isFirst: true)
+                categoriesCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+            } else {
+                cell.configure(categoryItem: currentCategoryItem)
+            }
+            
+            return cell
+        } else{
+            let cell = mealsCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.mealCellNibAndIdentifierName, for: indexPath) as! MealCollectionViewCell
+            let currentMealItem = viewModel.mealItem(at: indexPath.row)
+            cell.configure(mealItem: currentMealItem)
+            return cell
+        }
     }
+ 
+    // MARK: Collection View: setting sizes of items
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = categoriesCollectionView.bounds.size.width * 0.2
-        let height = categoriesCollectionView.bounds.size.height
-        return CGSize(width: width, height: height)
+        if collectionView == self.categoriesCollectionView {
+            let width = categoriesCollectionView.bounds.size.width * 0.2
+            let height = categoriesCollectionView.bounds.size.height
+            return CGSize(width: width, height: height)
+        } else{
+            let width = mealsCollectionView.bounds.size.width
+            let height = mealsCollectionView.bounds.size.height * 0.4
+            return CGSize(width: width, height: height)
+        }
     }
-}
-
-extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
-    // MARK: Table View Callback Methods
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
-    }
+  
+    // MARK: Collection View: Selecting an item
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.categoriesCollectionView {
+
+        }
     }
 }
+
+

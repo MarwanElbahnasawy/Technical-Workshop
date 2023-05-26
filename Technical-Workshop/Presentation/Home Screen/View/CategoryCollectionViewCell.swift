@@ -18,8 +18,18 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         categoryImageView.layer.masksToBounds = true
     }
     
-    func configure(categoryItem: CategoryItem){
-        categoryTitle.text = categoryItem.title
-        categoryImageView.image = UIImage(named: categoryItem.image.rawValue)
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                categoryImageView.backgroundColor = UIColor(named: Constants.categoriesBackgroundColorSelected)
+            } else {
+                categoryImageView.backgroundColor = UIColor(named: Constants.categoryBackgroundColor)
+            }
+        }
     }
-}
+        
+        func configure(categoryItem: CategoryItem, isFirst: Bool = false){
+            categoryTitle.text = categoryItem.title
+            categoryImageView.image = UIImage(named: categoryItem.image.rawValue)
+        }
+    }

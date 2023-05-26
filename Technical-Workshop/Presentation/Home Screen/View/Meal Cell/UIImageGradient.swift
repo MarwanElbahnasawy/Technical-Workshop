@@ -8,14 +8,13 @@
 import UIKit
 
 extension UIImageView {
-    //MARK:- gradient backgroung
+    // MARK: gradient backgroung
     func makeGradient() {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.contents = self.image?.cgImage
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        gradient.startPoint = CGPoint(x: 0.5, y: 0.5)
-        gradient.endPoint = CGPoint(x: 0.5, y: 1)
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 0.7, y: 0.5)
         self.layer.addSublayer(gradient)
     }
 }

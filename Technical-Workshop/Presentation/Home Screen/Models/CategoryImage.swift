@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CategoryImage: String{
+enum CategoryImage: String {
     case firstCategory = "FIRSTCATEGORY"
     case secondCategory = "SECONDCATEGORY"
     case thirdCategory = "THIRDCATEGORY"

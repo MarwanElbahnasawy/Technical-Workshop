@@ -9,5 +9,7 @@ import Foundation
 
 protocol HomeScreenViewModelType {
     var categoryItemsCount: Int { get }
+    var mealsItemsCount: Int { get }
     func categoryItem(at index: Int) -> CategoryItem
+    func mealItem(at index: Int) -> MealItem
 }

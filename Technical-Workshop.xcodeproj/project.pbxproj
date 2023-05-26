@@ -24,6 +24,8 @@
 		178484F02A20B5EC0002D108 /* CategoryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484EF2A20B5EC0002D108 /* CategoryImage.swift */; };
 		178484F22A20B74A0002D108 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484F12A20B74A0002D108 /* CategoryCollectionViewCell.swift */; };
 		178484F82A20D4F30002D108 /* HomeScreenViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484F72A20D4F30002D108 /* HomeScreenViewModelType.swift */; };
+		17EBEC122A20E25000572806 /* MealItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EBEC112A20E25000572806 /* MealItem.swift */; };
+		17EBEC142A20E33A00572806 /* MealImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EBEC132A20E33A00572806 /* MealImage.swift */; };
 		17FF173B2A1F68D900E6A365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF173A2A1F68D900E6A365 /* AppDelegate.swift */; };
 		17FF173D2A1F68D900E6A365 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF173C2A1F68D900E6A365 /* SceneDelegate.swift */; };
 		17FF17452A1F68D900E6A365 /* Technical_Workshop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17FF17432A1F68D900E6A365 /* Technical_Workshop.xcdatamodeld */; };
@@ -95,6 +97,8 @@
 		178484F12A20B74A0002D108 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		178484F72A20D4F30002D108 /* HomeScreenViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelType.swift; sourceTree = "<group>"; };
 		17A313B067C975F6E36B0BEA /* Pods_Technical_Workshop_Technical_WorkshopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Technical_Workshop_Technical_WorkshopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17EBEC112A20E25000572806 /* MealItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealItem.swift; sourceTree = "<group>"; };
+		17EBEC132A20E33A00572806 /* MealImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealImage.swift; sourceTree = "<group>"; };
 		17FF17372A1F68D900E6A365 /* Technical-Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Technical-Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF173A2A1F68D900E6A365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17FF173C2A1F68D900E6A365 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -348,6 +352,8 @@
 			children = (
 				178484ED2A20B5B20002D108 /* CategoryItem.swift */,
 				178484EF2A20B5EC0002D108 /* CategoryImage.swift */,
+				17EBEC112A20E25000572806 /* MealItem.swift */,
+				17EBEC132A20E33A00572806 /* MealImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -725,6 +731,7 @@
 			files = (
 				178484BA2A209D100002D108 /* Constants.swift in Sources */,
 				178484F22A20B74A0002D108 /* CategoryCollectionViewCell.swift in Sources */,
+				17EBEC122A20E25000572806 /* MealItem.swift in Sources */,
 				178484EB2A20A2320002D108 /* DetailsScreenViewModel.swift in Sources */,
 				178484E12A20A1E60002D108 /* DetailsScreenViewController.swift in Sources */,
 				178484F02A20B5EC0002D108 /* CategoryImage.swift in Sources */,
@@ -734,6 +741,7 @@
 				17FF173B2A1F68D900E6A365 /* AppDelegate.swift in Sources */,
 				178484DF2A20A1DB0002D108 /* FavoritesScreenViewController.swift in Sources */,
 				17FF17452A1F68D900E6A365 /* Technical_Workshop.xcdatamodeld in Sources */,
+				17EBEC142A20E33A00572806 /* MealImage.swift in Sources */,
 				178484E92A20A2250002D108 /* FavoritesScreenViewModel.swift in Sources */,
 				178484EE2A20B5B20002D108 /* CategoryItem.swift in Sources */,
 				17FF173D2A1F68D900E6A365 /* SceneDelegate.swift in Sources */,
