@@ -34,7 +34,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="RJZ-fu-bmt" customClass="CategoryCollectionViewCell" customModule="Technical_Workshop" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoriesCollectionViewCell" id="RJZ-fu-bmt" customClass="CategoryCollectionViewCell" customModule="Technical_Workshop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="228" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="J6u-O9-KcG">
@@ -78,55 +78,52 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="9vh-Zb-jEF"/>
                                 </connections>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CjL-fg-Rrc">
-                                <rect key="frame" x="0.0" y="297.66666666666669" width="393" height="520.33333333333326"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeTableViewCell" id="YXO-SA-xuN">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YXO-SA-xuN" id="HAv-uN-nNt">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="F07-Pi-mIw"/>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="3my-cH-lC6"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Recipes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACx-Nm-1uc">
                                 <rect key="frame" x="0.0" y="59" width="393" height="42.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" name="fontColorHomeGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pWu-Mb-clL">
+                                <rect key="frame" x="0.0" y="297.66666666666669" width="393" height="520.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="MbR-lr-2Pl">
+                                    <size key="itemSize" width="339" height="280"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="VeH-oK-7ka"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="xJl-9N-uiv"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ACx-Nm-1uc" secondAttribute="trailing" id="0Pj-ht-gDP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pWu-Mb-clL" secondAttribute="bottom" id="1s0-As-c3c"/>
                             <constraint firstItem="FLU-lI-m3O" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="3so-HK-sN4"/>
                             <constraint firstItem="ACx-Nm-1uc" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.05" id="52r-ML-I93"/>
                             <constraint firstItem="ACx-Nm-1uc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5mT-dH-HAE"/>
-                            <constraint firstItem="CjL-fg-Rrc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6NJ-yg-pim"/>
                             <constraint firstItem="ACx-Nm-1uc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7m8-dL-Zuj"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="CjL-fg-Rrc" secondAttribute="bottom" id="Con-aM-WZZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wiI-CN-2cB" secondAttribute="trailing" constant="15" id="Kb8-L5-BIu"/>
-                            <constraint firstItem="CjL-fg-Rrc" firstAttribute="top" secondItem="wiI-CN-2cB" secondAttribute="bottom" id="QjD-SQ-Bgw"/>
+                            <constraint firstItem="pWu-Mb-clL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RNs-Uj-5dI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FLU-lI-m3O" secondAttribute="trailing" id="Uqk-18-j75"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CjL-fg-Rrc" secondAttribute="trailing" id="af2-Wk-pAe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pWu-Mb-clL" secondAttribute="trailing" id="VaL-tB-NCq"/>
                             <constraint firstItem="FLU-lI-m3O" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.08" id="j9d-ia-nIu"/>
                             <constraint firstItem="wiI-CN-2cB" firstAttribute="top" secondItem="FLU-lI-m3O" secondAttribute="bottom" id="qwK-gn-m2U"/>
                             <constraint firstItem="wiI-CN-2cB" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.15" id="spf-Ex-7e0"/>
                             <constraint firstItem="wiI-CN-2cB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="uAW-mx-AV7"/>
+                            <constraint firstItem="pWu-Mb-clL" firstAttribute="top" secondItem="wiI-CN-2cB" secondAttribute="bottom" id="zRO-o2-VKI"/>
                             <constraint firstItem="FLU-lI-m3O" firstAttribute="top" secondItem="ACx-Nm-1uc" secondAttribute="bottom" id="ztC-Ua-hhw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="wiI-CN-2cB" id="JcX-em-mOl"/>
-                        <outlet property="homeTableView" destination="CjL-fg-Rrc" id="rNF-V4-O1h"/>
+                        <outlet property="mealsCollectionView" destination="pWu-Mb-clL" id="IbD-ph-Rza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -136,10 +133,10 @@
     </scenes>
     <resources>
         <namedColor name="categoryBackgroundColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.039999999105930328" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="fontColorHomeGray">
-            <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.32499998807907104" green="0.32499998807907104" blue="0.32499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

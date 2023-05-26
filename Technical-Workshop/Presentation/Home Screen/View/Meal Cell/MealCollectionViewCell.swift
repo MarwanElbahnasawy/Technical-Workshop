@@ -8,7 +8,7 @@
 import UIKit
 
 class MealCollectionViewCell: UICollectionViewCell {
-   
+    
     var cellDelegate: MealCellDelgate?
     
     @IBOutlet weak var servingsLabel: UILabel!
@@ -18,14 +18,28 @@ class MealCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var recipePlaceHolder: UIImageView!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         recipePlaceHolder.makeGradient()
     }
     @IBAction func favoriteButton(_ sender: Any) {
         cellDelegate?.didPressedFavBtn()
     }
-    func setup(){
-        //TODO pass object to setup cell
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        recipePlaceHolder.layer.cornerRadius = 10
+        recipePlaceHolder.layer.masksToBounds = true
     }
+    
+    func configure(mealItem: MealItem){
+        mealRecipeLabel.text = mealItem.mealRecipe
+        chefNameLabel.text = mealItem.chefName
+        mealTypeLabel.text = mealItem.mealType
+        servingsLabel.text = mealItem.servings
+        recipePlaceHolder.image = UIImage(named: mealItem.image.rawValue)
+    }
+    
+    
 }
 protocol MealCellDelgate{
     func didPressedFavBtn()
