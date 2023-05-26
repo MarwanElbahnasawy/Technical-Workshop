@@ -11,10 +11,10 @@ class HomeScreenViewModel: HomeScreenViewModelType {
     private let categoryItems = [CategoryItem(title: "Popular", image: .firstCategory), CategoryItem(title: "Breakfast", image: .secondCategory), CategoryItem(title: "Lunch", image: .thirdCategory), CategoryItem(title: "Dinner", image: .fourthCategory), CategoryItem(title: "Dessert", image: .fifthCategory)]
     
     var categoryItemsCount: Int {
-        return categoryItems.count
+        categoryItems.count
     }
     
     func categoryItem(at index: Int) -> CategoryItem {
-        return categoryItems[index]
+        categoryItems[index]
     }
 }

@@ -7,32 +7,31 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
+class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var homeTableView: UITableView!
     
-    
     private lazy var viewModel: HomeScreenViewModelType = {
-        return HomeScreenViewModel()
+        HomeScreenViewModel()
     }()
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
- 
+}
+
+extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     // MARK: Collection View Callback Methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.categoryItemsCount
+        viewModel.categoryItemsCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CategoryCollectionViewCell
         let currentCategoryItem = viewModel.categoryItem(at: indexPath.row)
         cell.configure(categoryItem: currentCategoryItem)
-        
         return cell
     }
     
@@ -41,15 +40,16 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         let height = categoriesCollectionView.bounds.size.height
         return CGSize(width: width, height: height)
     }
+}
 
+extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: Table View Callback Methods
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        UITableViewCell()
     }
-
 }
