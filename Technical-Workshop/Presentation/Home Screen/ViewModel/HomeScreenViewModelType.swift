@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HomeScreenViewModelType{
+protocol HomeScreenViewModelType {
     var categoryItemsCount: Int { get }
     func categoryItem(at index: Int) -> CategoryItem
 }

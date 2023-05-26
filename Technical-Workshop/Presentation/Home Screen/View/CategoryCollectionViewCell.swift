@@ -22,5 +22,4 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         categoryTitle.text = categoryItem.title
         categoryImageView.image = UIImage(named: categoryItem.image.rawValue)
     }
-    
 }
