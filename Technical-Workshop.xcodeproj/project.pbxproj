@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178484BA2A209D100002D108 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178484B92A209D100002D108 /* Constants.swift */; };
 		17FF173B2A1F68D900E6A365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF173A2A1F68D900E6A365 /* AppDelegate.swift */; };
 		17FF173D2A1F68D900E6A365 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF173C2A1F68D900E6A365 /* SceneDelegate.swift */; };
 		17FF173F2A1F68D900E6A365 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF173E2A1F68D900E6A365 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		02F17445B1AA865313358C41 /* Pods-Technical-Workshop-Technical-WorkshopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technical-Workshop-Technical-WorkshopUITests.debug.xcconfig"; path = "Target Support Files/Pods-Technical-Workshop-Technical-WorkshopUITests/Pods-Technical-Workshop-Technical-WorkshopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		178484B92A209D100002D108 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		17A313B067C975F6E36B0BEA /* Pods_Technical_Workshop_Technical_WorkshopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Technical_Workshop_Technical_WorkshopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF17372A1F68D900E6A365 /* Technical-Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Technical-Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF173A2A1F68D900E6A365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				17FF17482A1F68DB00E6A365 /* LaunchScreen.storyboard */,
 				17FF174B2A1F68DB00E6A365 /* Info.plist */,
 				17FF17432A1F68D900E6A365 /* Technical_Workshop.xcdatamodeld */,
+				178484B92A209D100002D108 /* Constants.swift */,
 			);
 			path = "Technical-Workshop";
 			sourceTree = "<group>";
@@ -167,7 +170,6 @@
 				C972C2B209D5FDDE211F2C82 /* Pods-Technical-WorkshopTests.debug.xcconfig */,
 				B5A01150EF4BAAB58EE1490F /* Pods-Technical-WorkshopTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -410,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178484BA2A209D100002D108 /* Constants.swift in Sources */,
 				17FF173F2A1F68D900E6A365 /* ViewController.swift in Sources */,
 				17FF173B2A1F68D900E6A365 /* AppDelegate.swift in Sources */,
 				17FF17452A1F68D900E6A365 /* Technical_Workshop.xcdatamodeld in Sources */,
