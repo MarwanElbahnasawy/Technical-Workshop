@@ -49,6 +49,8 @@
 		3F63E5F52A20B12400E0E790 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F63E5E22A20B12400E0E790 /* Poppins-Black.ttf */; };
 		3F63E5F62A20B12400E0E790 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F63E5E32A20B12400E0E790 /* Poppins-LightItalic.ttf */; };
 		3F63E5F72A20B12400E0E790 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F63E5E42A20B12400E0E790 /* Poppins-ExtraBoldItalic.ttf */; };
+		3F63E61B2A210CF200E0E790 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63E61A2A210CF200E0E790 /* CustomTabBarViewController.swift */; };
+		3F63E61D2A21ECB500E0E790 /* ViewInDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F63E61C2A21ECB500E0E790 /* ViewInDetails.storyboard */; };
 		D3847E8EB7E40498BAF59E61 /* Pods_Technical_Workshop_Technical_WorkshopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A313B067C975F6E36B0BEA /* Pods_Technical_Workshop_Technical_WorkshopUITests.framework */; };
 		F136814F33776CB6CDF53DAD /* Pods_Technical_WorkshopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5512945F6BD19DDADB123BD0 /* Pods_Technical_WorkshopTests.framework */; };
 		F2FF4372364CE995C9ACF6E0 /* Pods_Technical_Workshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92E17432F8CFB4193DB77F4 /* Pods_Technical_Workshop.framework */; };
@@ -120,6 +122,8 @@
 		3F63E5E22A20B12400E0E790 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
 		3F63E5E32A20B12400E0E790 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
 		3F63E5E42A20B12400E0E790 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		3F63E61A2A210CF200E0E790 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		3F63E61C2A21ECB500E0E790 /* ViewInDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewInDetails.storyboard; sourceTree = "<group>"; };
 		5512945F6BD19DDADB123BD0 /* Pods_Technical_WorkshopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Technical_WorkshopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F982ADFCBE6C66B56010DF /* Pods-Technical-Workshop-Technical-WorkshopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technical-Workshop-Technical-WorkshopUITests.release.xcconfig"; path = "Target Support Files/Pods-Technical-Workshop-Technical-WorkshopUITests/Pods-Technical-Workshop-Technical-WorkshopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9815C727B48F87845989531F /* Pods-Technical-Workshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technical-Workshop.release.xcconfig"; path = "Target Support Files/Pods-Technical-Workshop/Pods-Technical-Workshop.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 			children = (
 				178484C42A209E9D0002D108 /* View */,
 				178484C32A209E8E0002D108 /* ViewModel */,
+				3F63E61C2A21ECB500E0E790 /* ViewInDetails.storyboard */,
 			);
 			path = "Home Screen";
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				3F63E5CC2A20A95B00E0E790 /* Meal Cell */,
 				178484D62A20A1800002D108 /* HomeScreenStoryboard.storyboard */,
 				178484DC2A20A1CA0002D108 /* HomeScreenViewController.swift */,
+				3F63E61A2A210CF200E0E790 /* CustomTabBarViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -564,6 +570,7 @@
 				3F63E5F62A20B12400E0E790 /* Poppins-LightItalic.ttf in Resources */,
 				178484D52A20A16D0002D108 /* LaunchScreenStoryboard.storyboard in Resources */,
 				17FF174A2A1F68DB00E6A365 /* LaunchScreen.storyboard in Resources */,
+				3F63E61D2A21ECB500E0E790 /* ViewInDetails.storyboard in Resources */,
 				3F63E5EC2A20B12400E0E790 /* Poppins-BlackItalic.ttf in Resources */,
 				3F63E5CB2A20A93E00E0E790 /* MealCollectionViewCell.xib in Resources */,
 				3F63E5E92A20B12400E0E790 /* Poppins-Italic.ttf in Resources */,
@@ -714,6 +721,7 @@
 				17FF17452A1F68D900E6A365 /* Technical_Workshop.xcdatamodeld in Sources */,
 				178484E92A20A2250002D108 /* FavoritesScreenViewModel.swift in Sources */,
 				17FF173D2A1F68D900E6A365 /* SceneDelegate.swift in Sources */,
+				3F63E61B2A210CF200E0E790 /* CustomTabBarViewController.swift in Sources */,
 				3F63E5CE2A20ACA800E0E790 /* UIImageGradient.swift in Sources */,
 				178484DD2A20A1CA0002D108 /* HomeScreenViewController.swift in Sources */,
 				178484E72A20A2190002D108 /* HomeScreenViewModel.swift in Sources */,
@@ -888,10 +896,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CV64V222GG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Technical-Workshop/Info.plist";
+				INFOPLIST_FILE = "Technical-Workshop/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = HomeScreenStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -917,10 +925,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CV64V222GG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Technical-Workshop/Info.plist";
+				INFOPLIST_FILE = "Technical-Workshop/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = HomeScreenStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

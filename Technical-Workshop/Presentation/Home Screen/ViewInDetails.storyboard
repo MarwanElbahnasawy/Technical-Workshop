@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seo-uY-VJJ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Recipe placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-EZ-XKg">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGe-WX-9tl">
+                                        <rect key="frame" x="31" y="175" width="57" height="57"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="Hue-kL-I6W"/>
+                                            <constraint firstAttribute="width" constant="57" id="IfZ-XW-cYB"/>
+                                        </constraints>
+                                        <color key="tintColor" name="LabelTextColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title="">
+                                            <backgroundConfiguration key="background" cornerRadius="56">
+                                                <color key="backgroundColor" name="LikeButtonColor"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83d-tC-Khd">
+                                        <rect key="frame" x="331" y="662" width="41" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="41" id="LLc-M4-72p"/>
+                                            <constraint firstAttribute="height" constant="41" id="g9K-Qb-nLN"/>
+                                        </constraints>
+                                        <color key="tintColor" name="LabelTextColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" image="heart" catalog="system">
+                                                <color key="backgroundColor" name="LikeButtonColor"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="xGe-WX-9tl" firstAttribute="top" secondItem="seo-uY-VJJ" secondAttribute="top" constant="175" id="6dy-v2-max"/>
+                                    <constraint firstAttribute="trailing" secondItem="83d-tC-Khd" secondAttribute="trailing" constant="21" id="7uj-Sk-aIf"/>
+                                    <constraint firstAttribute="bottom" secondItem="LAu-EZ-XKg" secondAttribute="bottom" id="HfH-Ka-Big"/>
+                                    <constraint firstAttribute="bottom" secondItem="83d-tC-Khd" secondAttribute="bottom" constant="56" id="Vr6-1C-ADY"/>
+                                    <constraint firstItem="LAu-EZ-XKg" firstAttribute="leading" secondItem="seo-uY-VJJ" secondAttribute="leading" id="ZId-Gt-ZKx"/>
+                                    <constraint firstAttribute="trailing" secondItem="LAu-EZ-XKg" secondAttribute="trailing" id="k49-Ge-gYu"/>
+                                    <constraint firstItem="LAu-EZ-XKg" firstAttribute="top" secondItem="seo-uY-VJJ" secondAttribute="top" id="luU-We-PcU"/>
+                                    <constraint firstItem="xGe-WX-9tl" firstAttribute="leading" secondItem="seo-uY-VJJ" secondAttribute="leading" constant="31" id="sMK-UB-YGO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="seo-uY-VJJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6MR-RQ-5Hl"/>
+                            <constraint firstItem="seo-uY-VJJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7yh-3t-gbd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="seo-uY-VJJ" secondAttribute="bottom" id="Xp7-pY-Ewf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="seo-uY-VJJ" secondAttribute="trailing" id="dVP-iz-Gu2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.885496183206101" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Recipe placeholder" width="383" height="174"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <namedColor name="LabelTextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LikeButtonColor">
+            <color red="0.85098039215686272" green="0.58823529411764708" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
