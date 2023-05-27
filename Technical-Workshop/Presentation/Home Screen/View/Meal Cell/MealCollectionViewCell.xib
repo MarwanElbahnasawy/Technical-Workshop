@@ -51,40 +51,43 @@
                                     <action selector="favoriteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="LWq-gb-YoQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Recipe" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEI-nr-XNm">
-                                <rect key="frame" x="657.33333333333337" y="46.333333333333329" width="86.666666666666629" height="55.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Recipe" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEI-nr-XNm">
+                                <rect key="frame" x="574" y="32.666666666666664" width="200" height="82.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5pK-kO-PcQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="14"/>
                                 <color key="textColor" name="LabelTextColor"/>
                                 <color key="highlightedColor" systemColor="systemGray6Color"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by : Chef name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgB-m8-b6B">
-                                <rect key="frame" x="657.33333333333337" y="111.66666666666667" width="76" height="27.666666666666671"/>
+                                <rect key="frame" x="698" y="125.33333333333333" width="76" height="27.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <color key="textColor" name="LabelSubtitleText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VectorKnife_and_Spoon_x1" translatesAutoresizingMaskIntoConstraints="NO" id="OlS-UW-UN5">
-                                <rect key="frame" x="657.33333333333337" y="149.33333333333334" width="13" height="13"/>
+                                <rect key="frame" x="702" y="163" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="0fb-r2-eaj"/>
                                     <constraint firstAttribute="width" constant="13" id="wh4-hR-1Mx"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal type" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ro-0C-OmY">
-                                <rect key="frame" x="680.33333333333337" y="142" width="49" height="27.666666666666657"/>
+                                <rect key="frame" x="725" y="155.66666666666666" width="49" height="27.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <color key="textColor" name="LabelSmallSubText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VectorPlate_x1" translatesAutoresizingMaskIntoConstraints="NO" id="ZOt-3F-WGS">
-                                <rect key="frame" x="657.33333333333337" y="179.66666666666666" width="13" height="13"/>
+                                <rect key="frame" x="702" y="193.33333333333334" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="Q0M-ej-gRr"/>
                                     <constraint firstAttribute="height" constant="13" id="noV-a6-KGB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="servings :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17a-c2-uvR">
-                                <rect key="frame" x="680.33333333333337" y="172.33333333333334" width="46.666666666666629" height="27.333333333333343"/>
+                                <rect key="frame" x="727.33333333333337" y="186" width="46.666666666666629" height="27.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <color key="textColor" name="LabelSmallSubText"/>
                                 <nil key="highlightedColor"/>
@@ -92,28 +95,28 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dEI-nr-XNm" firstAttribute="height" secondItem="1iX-cQ-jTS" secondAttribute="height" multiplier="0.2" id="2Ec-F4-T4l"/>
+                            <constraint firstItem="dEI-nr-XNm" firstAttribute="height" secondItem="1iX-cQ-jTS" secondAttribute="height" multiplier="0.3" id="2Ec-F4-T4l"/>
                             <constraint firstItem="1iX-cQ-jTS" firstAttribute="leading" secondItem="MWN-8G-dLb" secondAttribute="leading" constant="10" id="3KT-HF-sUG"/>
-                            <constraint firstItem="ZOt-3F-WGS" firstAttribute="leading" secondItem="OlS-UW-UN5" secondAttribute="leading" id="6iE-fw-QfC"/>
                             <constraint firstAttribute="trailing" secondItem="1iX-cQ-jTS" secondAttribute="trailing" constant="10" id="9DO-Qh-zpT"/>
-                            <constraint firstItem="OlS-UW-UN5" firstAttribute="leading" secondItem="FgB-m8-b6B" secondAttribute="leading" id="E5g-fT-rIw"/>
+                            <constraint firstAttribute="trailing" secondItem="17a-c2-uvR" secondAttribute="trailing" constant="30" id="9wy-EP-SiS"/>
                             <constraint firstItem="1iX-cQ-jTS" firstAttribute="top" secondItem="MWN-8G-dLb" secondAttribute="top" constant="10" id="Hez-LO-9B0"/>
-                            <constraint firstItem="FgB-m8-b6B" firstAttribute="leading" secondItem="dEI-nr-XNm" secondAttribute="leading" id="Hwe-Mb-dMQ"/>
                             <constraint firstItem="FgB-m8-b6B" firstAttribute="height" secondItem="1iX-cQ-jTS" secondAttribute="height" multiplier="0.1" id="LUj-6n-j4J"/>
+                            <constraint firstAttribute="trailing" secondItem="FgB-m8-b6B" secondAttribute="trailing" constant="30" id="LtL-Yc-CJJ"/>
                             <constraint firstAttribute="bottom" secondItem="1iX-cQ-jTS" secondAttribute="bottom" constant="10" id="TPR-wS-Ee2"/>
                             <constraint firstItem="CJd-Ks-HOw" firstAttribute="top" secondItem="1iX-cQ-jTS" secondAttribute="top" constant="20" id="ZlC-NX-Xn3"/>
                             <constraint firstItem="ZOt-3F-WGS" firstAttribute="top" secondItem="0Ro-0C-OmY" secondAttribute="bottom" constant="10" id="bDt-2B-Iep"/>
                             <constraint firstItem="dEI-nr-XNm" firstAttribute="centerY" secondItem="1iX-cQ-jTS" secondAttribute="centerY" multiplier="0.5" id="bMJ-As-4Ie"/>
-                            <constraint firstItem="17a-c2-uvR" firstAttribute="leading" secondItem="ZOt-3F-WGS" secondAttribute="trailing" constant="10" id="coE-yW-FdD"/>
                             <constraint firstItem="17a-c2-uvR" firstAttribute="height" secondItem="1iX-cQ-jTS" secondAttribute="height" multiplier="0.1" id="eui-1V-EWL"/>
                             <constraint firstItem="0Ro-0C-OmY" firstAttribute="leading" secondItem="OlS-UW-UN5" secondAttribute="trailing" constant="10" id="gLc-D2-TdQ"/>
                             <constraint firstItem="FgB-m8-b6B" firstAttribute="top" secondItem="dEI-nr-XNm" secondAttribute="bottom" constant="10" id="gsY-nU-koH"/>
+                            <constraint firstAttribute="trailing" secondItem="0Ro-0C-OmY" secondAttribute="trailing" constant="30" id="hBS-UZ-K5U"/>
                             <constraint firstItem="17a-c2-uvR" firstAttribute="centerY" secondItem="ZOt-3F-WGS" secondAttribute="centerY" id="k4j-mW-QOR"/>
-                            <constraint firstItem="1iX-cQ-jTS" firstAttribute="trailing" secondItem="dEI-nr-XNm" secondAttribute="trailing" constant="50" id="mkP-Zv-dpY"/>
+                            <constraint firstItem="1iX-cQ-jTS" firstAttribute="trailing" secondItem="dEI-nr-XNm" secondAttribute="trailing" constant="20" id="mkP-Zv-dpY"/>
                             <constraint firstItem="CJd-Ks-HOw" firstAttribute="leading" secondItem="1iX-cQ-jTS" secondAttribute="leading" constant="20" id="nTm-Mc-VCe"/>
                             <constraint firstItem="0Ro-0C-OmY" firstAttribute="centerY" secondItem="OlS-UW-UN5" secondAttribute="centerY" id="uOk-8w-wl7"/>
                             <constraint firstItem="OlS-UW-UN5" firstAttribute="top" secondItem="FgB-m8-b6B" secondAttribute="bottom" constant="10" id="ung-1N-xjW"/>
                             <constraint firstItem="0Ro-0C-OmY" firstAttribute="height" secondItem="1iX-cQ-jTS" secondAttribute="height" multiplier="0.1" id="vXc-yT-eWa"/>
+                            <constraint firstItem="17a-c2-uvR" firstAttribute="leading" secondItem="ZOt-3F-WGS" secondAttribute="trailing" constant="12.333333333333371" id="zly-Na-S8M"/>
                         </constraints>
                     </view>
                 </subviews>

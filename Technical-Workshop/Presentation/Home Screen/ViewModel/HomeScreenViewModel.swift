@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class HomeScreenViewModel: HomeScreenViewModelType {
     private let categoryItems = [CategoryItem(title: "Popular", image: .firstCategory),
@@ -14,11 +15,31 @@ class HomeScreenViewModel: HomeScreenViewModelType {
                                  CategoryItem(title: "Dinner", image: .fourthCategory),
                                  CategoryItem(title: "Dessert", image: .fifthCategory)]
     
-    private let mealItems = [MealItem(mealRecipe: "meal1", chefName: "name1", mealType: "mealtype1", servings: "servings1", image: .recipePlaceholder),
-                             MealItem(mealRecipe: "meal2", chefName: "name2", mealType: "mealtype2", servings: "servings2", image: .recipePlaceholder),
-                             MealItem(mealRecipe: "meal3", chefName: "name3", mealType: "mealtype3", servings: "servings3", image: .recipePlaceholder),
-                             MealItem(mealRecipe: "meal4", chefName: "name4", mealType: "mealtype4", servings: "servings4", image: .recipePlaceholder),
-                             MealItem(mealRecipe: "meal5", chefName: "name5", mealType: "mealtype5", servings: "servings5", image: .recipePlaceholder)]
+    var mealItems = [MealItem]()
+    
+    var didRecieveRecipes: (() -> ())?
+    
+    func callListApi( tags :String , from :String = "0" , size :String = "20") {
+        mealItems.removeAll()
+        let param : [String: String] = ["size": size,"from": from,"tags": tags]
+        APIServices.instance.getData(route: .list, method: .get, params: param, encoding: URLEncoding.default) {  [weak self] (dataurl: Root?, error) in
+            guard let root = dataurl else {
+                fatalError("root nil")
+             }
+            for i in 0 ... (root.results!.count - 1) {
+                let meal = root.results![i]
+                self?.mealItems.append(MealItem(mealRecipe: meal.name ?? "Unknown",
+                                                chefName: meal.credits?[0].name ?? "by Tresha Lindo",
+                                                mealType: meal.sections?[0].name ?? "Random",
+                                                servings: String(meal.numServings ?? 0),
+                                                imageString: meal.thumbnailURL ?? "",
+                                                mealId: meal.id!))
+                if i == root.results!.count - 1 {
+                    self?.didRecieveRecipes?()
+                }
+            }
+        }
+    }
     
     var categoryItemsCount: Int {
         categoryItems.count
