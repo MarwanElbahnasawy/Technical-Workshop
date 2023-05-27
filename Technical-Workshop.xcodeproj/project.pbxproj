@@ -29,6 +29,10 @@
 		17FF175F2A1F68DB00E6A365 /* Technical_WorkshopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF175E2A1F68DB00E6A365 /* Technical_WorkshopUITests.swift */; };
 		17FF17612A1F68DB00E6A365 /* Technical_WorkshopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF17602A1F68DB00E6A365 /* Technical_WorkshopUITestsLaunchTests.swift */; };
 		D3847E8EB7E40498BAF59E61 /* Pods_Technical_Workshop_Technical_WorkshopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A313B067C975F6E36B0BEA /* Pods_Technical_Workshop_Technical_WorkshopUITests.framework */; };
+		EBA3794B2A21032300D27EF3 /* FavouriteMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3794A2A21032300D27EF3 /* FavouriteMealModel.swift */; };
+		EBA3794D2A21038B00D27EF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3794C2A21038B00D27EF3 /* CoreDataManager.swift */; };
+		EBA379512A21066100D27EF3 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA379502A21066100D27EF3 /* CoreDataManagerTests.swift */; };
+		EBA379562A21077500D27EF3 /* FavoritesScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA379552A21077500D27EF3 /* FavoritesScreenViewModelTests.swift */; };
 		F136814F33776CB6CDF53DAD /* Pods_Technical_WorkshopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5512945F6BD19DDADB123BD0 /* Pods_Technical_WorkshopTests.framework */; };
 		F2FF4372364CE995C9ACF6E0 /* Pods_Technical_Workshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92E17432F8CFB4193DB77F4 /* Pods_Technical_Workshop.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +89,10 @@
 		C972C2B209D5FDDE211F2C82 /* Pods-Technical-WorkshopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technical-WorkshopTests.debug.xcconfig"; path = "Target Support Files/Pods-Technical-WorkshopTests/Pods-Technical-WorkshopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D92E17432F8CFB4193DB77F4 /* Pods_Technical_Workshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Technical_Workshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E743DF5D457396D8D404AFEE /* Pods-Technical-Workshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technical-Workshop.debug.xcconfig"; path = "Target Support Files/Pods-Technical-Workshop/Pods-Technical-Workshop.debug.xcconfig"; sourceTree = "<group>"; };
+		EBA3794A2A21032300D27EF3 /* FavouriteMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMealModel.swift; sourceTree = "<group>"; };
+		EBA3794C2A21038B00D27EF3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		EBA379502A21066100D27EF3 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
+		EBA379552A21077500D27EF3 /* FavoritesScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScreenViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +321,7 @@
 		17FF17392A1F68D900E6A365 /* Technical-Workshop */ = {
 			isa = PBXGroup;
 			children = (
+				EBA379482A2102F200D27EF3 /* DataTemp */,
 				178484C22A209E690002D108 /* Utils */,
 				178484CF2A209F060002D108 /* Data */,
 				178484BF2A209DE10002D108 /* Presentation */,
@@ -326,6 +335,8 @@
 		17FF17532A1F68DB00E6A365 /* Technical-WorkshopTests */ = {
 			isa = PBXGroup;
 			children = (
+				EBA379522A2106C300D27EF3 /* Presentation */,
+				EBA3794E2A21063B00D27EF3 /* DataTemp */,
 				17FF17542A1F68DB00E6A365 /* Technical_WorkshopTests.swift */,
 			);
 			path = "Technical-WorkshopTests";
@@ -361,6 +372,63 @@
 				B5A01150EF4BAAB58EE1490F /* Pods-Technical-WorkshopTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EBA379482A2102F200D27EF3 /* DataTemp */ = {
+			isa = PBXGroup;
+			children = (
+				EBA379492A21030000D27EF3 /* Local */,
+			);
+			path = DataTemp;
+			sourceTree = "<group>";
+		};
+		EBA379492A21030000D27EF3 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				EBA3794A2A21032300D27EF3 /* FavouriteMealModel.swift */,
+				EBA3794C2A21038B00D27EF3 /* CoreDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		EBA3794E2A21063B00D27EF3 /* DataTemp */ = {
+			isa = PBXGroup;
+			children = (
+				EBA3794F2A21064600D27EF3 /* Local */,
+			);
+			path = DataTemp;
+			sourceTree = "<group>";
+		};
+		EBA3794F2A21064600D27EF3 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				EBA379502A21066100D27EF3 /* CoreDataManagerTests.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		EBA379522A2106C300D27EF3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				EBA379532A2106DA00D27EF3 /* Favorites Screen */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EBA379532A2106DA00D27EF3 /* Favorites Screen */ = {
+			isa = PBXGroup;
+			children = (
+				EBA379542A2106EE00D27EF3 /* ViewModel */,
+			);
+			path = "Favorites Screen";
+			sourceTree = "<group>";
+		};
+		EBA379542A2106EE00D27EF3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EBA379552A21077500D27EF3 /* FavoritesScreenViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,6 +673,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA3794B2A21032300D27EF3 /* FavouriteMealModel.swift in Sources */,
 				178484BA2A209D100002D108 /* Constants.swift in Sources */,
 				178484EB2A20A2320002D108 /* DetailsScreenViewModel.swift in Sources */,
 				178484E12A20A1E60002D108 /* DetailsScreenViewController.swift in Sources */,
@@ -616,6 +685,7 @@
 				178484E92A20A2250002D108 /* FavoritesScreenViewModel.swift in Sources */,
 				17FF173D2A1F68D900E6A365 /* SceneDelegate.swift in Sources */,
 				178484DD2A20A1CA0002D108 /* HomeScreenViewController.swift in Sources */,
+				EBA3794D2A21038B00D27EF3 /* CoreDataManager.swift in Sources */,
 				178484E72A20A2190002D108 /* HomeScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,7 +694,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA379512A21066100D27EF3 /* CoreDataManagerTests.swift in Sources */,
 				17FF17552A1F68DB00E6A365 /* Technical_WorkshopTests.swift in Sources */,
+				EBA379562A21077500D27EF3 /* FavoritesScreenViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,12 +860,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CV64V222GG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Technical-Workshop/Info.plist";
+				INFOPLIST_FILE = "Technical-Workshop/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = HomeScreenStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -817,12 +890,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CV64V222GG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Technical-Workshop/Info.plist";
+				INFOPLIST_FILE = "Technical-Workshop/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = HomeScreenStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
