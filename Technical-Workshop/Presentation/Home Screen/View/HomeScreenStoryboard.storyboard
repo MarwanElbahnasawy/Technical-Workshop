@@ -93,6 +93,14 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <view key="backgroundView" contentMode="scaleToFill" id="zcO-CA-DcQ" customClass="AnimationView" customModule="Lottie">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="520.33333333333326"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="VeH-oK-7ka"/>
@@ -123,6 +131,7 @@
                     </view>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="wiI-CN-2cB" id="JcX-em-mOl"/>
+                        <outlet property="lottieView" destination="zcO-CA-DcQ" id="Gl8-We-qBI"/>
                         <outlet property="mealsCollectionView" destination="pWu-Mb-clL" id="IbD-ph-Rza"/>
                     </connections>
                 </viewController>
@@ -131,6 +140,9 @@
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="zcO-CA-DcQ"/>
+    </designables>
     <resources>
         <namedColor name="categoryBackgroundColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.039999999105930328" colorSpace="custom" customColorSpace="sRGB"/>
