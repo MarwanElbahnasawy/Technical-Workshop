@@ -6,3 +6,9 @@
 //
 
 import Foundation
+struct Constants {
+    static let mealCellNibAndIdentifierName = "MealCollectionViewCell"
+    static let categoriesCollectionViewCell = "categoriesCollectionViewCell"
+    static let categoriesBackgroundColorSelected = "categoriesBackgroundColorSelected"
+    static let categoryBackgroundColor = "categoryBackgroundColor"
+}
