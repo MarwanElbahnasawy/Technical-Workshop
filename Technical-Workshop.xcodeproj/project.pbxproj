@@ -69,8 +69,8 @@
 		3F63E61B2A210CF200E0E790 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63E61A2A210CF200E0E790 /* CustomTabBarViewController.swift */; };
 		3F63E61D2A21ECB500E0E790 /* ViewInDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F63E61C2A21ECB500E0E790 /* ViewInDetails.storyboard */; };
 		D3847E8EB7E40498BAF59E61 /* Pods_Technical_Workshop_Technical_WorkshopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A313B067C975F6E36B0BEA /* Pods_Technical_Workshop_Technical_WorkshopUITests.framework */; };
+		EB41C1282A2221EA006AD59E /* FavoritesScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41C1272A2221E9006AD59E /* FavoritesScreenViewModelTests.swift */; };
 		EBA379512A21066100D27EF3 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA379502A21066100D27EF3 /* CoreDataManagerTests.swift */; };
-		EBA379562A21077500D27EF3 /* FavoritesScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA379552A21077500D27EF3 /* FavoritesScreenViewModelTests.swift */; };
 		F136814F33776CB6CDF53DAD /* Pods_Technical_WorkshopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5512945F6BD19DDADB123BD0 /* Pods_Technical_WorkshopTests.framework */; };
 		F2FF4372364CE995C9ACF6E0 /* Pods_Technical_Workshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92E17432F8CFB4193DB77F4 /* Pods_Technical_Workshop.framework */; };
 /* End PBXBuildFile section */
@@ -167,8 +167,8 @@
 		C972C2B209D5FDDE211F2C82 /* Pods-Technical-WorkshopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technical-WorkshopTests.debug.xcconfig"; path = "Target Support Files/Pods-Technical-WorkshopTests/Pods-Technical-WorkshopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D92E17432F8CFB4193DB77F4 /* Pods_Technical_Workshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Technical_Workshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E743DF5D457396D8D404AFEE /* Pods-Technical-Workshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Technical-Workshop.debug.xcconfig"; path = "Target Support Files/Pods-Technical-Workshop/Pods-Technical-Workshop.debug.xcconfig"; sourceTree = "<group>"; };
+		EB41C1272A2221E9006AD59E /* FavoritesScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScreenViewModelTests.swift; sourceTree = "<group>"; };
 		EBA379502A21066100D27EF3 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
-		EBA379552A21077500D27EF3 /* FavoritesScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScreenViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -548,7 +548,7 @@
 		EBA379542A2106EE00D27EF3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				EBA379552A21077500D27EF3 /* FavoritesScreenViewModelTests.swift */,
+				EB41C1272A2221E9006AD59E /* FavoritesScreenViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -856,7 +856,7 @@
 			files = (
 				EBA379512A21066100D27EF3 /* CoreDataManagerTests.swift in Sources */,
 				17FF17552A1F68DB00E6A365 /* Technical_WorkshopTests.swift in Sources */,
-				EBA379562A21077500D27EF3 /* FavoritesScreenViewModelTests.swift in Sources */,
+				EB41C1282A2221EA006AD59E /* FavoritesScreenViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

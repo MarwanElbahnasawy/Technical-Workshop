@@ -25,6 +25,7 @@ class CoreDataManager: CoreDataManagerType {
         favouriteMealEntity.setValue(favouriteMeal.mealServings, forKey: "mealServings")
         favouriteMealEntity.setValue(favouriteMeal.chiefName, forKey: "chiefName")
         favouriteMealEntity.setValue(favouriteMeal.mealName, forKey: "mealName")
+        favouriteMealEntity.setValue(favouriteMeal.mealImage, forKey: "mealImage")
         
         do {
             try context!.save()
@@ -63,9 +64,10 @@ class CoreDataManager: CoreDataManagerType {
         do {
             let meals = try context?.fetch(fetchRequest)
             
-            for meal in meals! {
+            for meal in meals ?? [] {
                 favouriteMeal = FavouriteMealModel(
                     chiefName: meal.value(forKey: "chiefName") as? String,
+                    mealImage: meal.value(forKey: "mealImage") as? String,
                     mealID: meal.value(forKey: "mealID") as? Int,
                     mealType: meal.value(forKey: "mealType") as? String,
                     mealName: meal.value(forKey: "mealName") as? String,
