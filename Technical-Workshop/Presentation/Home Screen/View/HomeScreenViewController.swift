@@ -19,6 +19,10 @@ class HomeScreenViewController: UIViewController {
         HomeScreenViewModel()
     }()
     
+    private lazy var db: CoreDataManagerType = {
+        CoreDataManager()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         enableLottie()
@@ -33,7 +37,7 @@ class HomeScreenViewController: UIViewController {
     
 }
 
-extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MealCellDelgate {
     
     // MARK: Collection View: Number of items in section
     
@@ -64,6 +68,8 @@ extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             let cell = mealsCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.mealCellNibAndIdentifierName, for: indexPath) as! MealCollectionViewCell
             let currentMealItem = viewModel.mealItem(at: indexPath.row)
             cell.configure(mealItem: currentMealItem)
+            cell.cellDelegate = self
+            cell.currentMealItem = currentMealItem
             return cell
         }
     }
@@ -102,8 +108,9 @@ extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         }
         if collectionView == self.mealsCollectionView {
             let mealSelected = viewModel.mealItem(at: indexPath.row)
-            let detailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsScreenViewController") as! DetailsScreenViewController
-            // send id
+            let detailsViewController = UIStoryboard(name: "DetailsScreenStoryboard", bundle: nil) .instantiateViewController(withIdentifier: "DetailsScreenViewController") as! DetailsScreenViewController
+            let detailsViewModel = DetailsScreenViewModel(id: String(mealSelected.mealId))
+            detailsViewController.viewModel = detailsViewModel
             self.navigationController?.pushViewController(detailsViewController, animated: true)
         }
     }
@@ -125,6 +132,22 @@ extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             self.mealsCollectionView.isHidden = false
             self.lottieView.isHidden = true
         }
+    }
+    
+    func didPressedFavBtn(mealItem: MealItem) {
+        if !db.mealExists(for: mealItem.mealId){
+            db.insertFavouriteMeal(favouriteMeal: FavouriteMealModel(chiefName: mealItem.chefName, mealImage: mealItem.imageString, mealID: mealItem.mealId, mealType: mealItem.mealType, mealName: mealItem.mealRecipe, mealServings: mealItem.servings))
+        } else {
+            let alertController = UIAlertController(title: "Meal already exists", message: "The meal you selected already exists in your favorites", preferredStyle: .alert)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+                self.db.removeFavouriteMeal(for: mealItem.mealId)
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alertController.addAction(cancelAction)
+            alertController.addAction(deleteAction)
+            present(alertController, animated: true)
+        }
+        
     }
     
 }

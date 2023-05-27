@@ -11,18 +11,21 @@ class MealCollectionViewCell: UICollectionViewCell {
     
     var cellDelegate: MealCellDelgate?
     
+    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var servingsLabel: UILabel!
     @IBOutlet weak var mealTypeLabel: UILabel!
     @IBOutlet weak var chefNameLabel: UILabel!
     @IBOutlet weak var mealRecipeLabel: UILabel!
     @IBOutlet weak var recipePlaceHolder: UIImageView!
     
+    var currentMealItem: MealItem?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         recipePlaceHolder.makeGradient()
     }
     @IBAction func favoriteButton(_ sender: Any) {
-        cellDelegate?.didPressedFavBtn()
+        cellDelegate?.didPressedFavBtn(mealItem: self.currentMealItem!)
     }
     
     override func layoutSubviews() {
@@ -36,11 +39,11 @@ class MealCollectionViewCell: UICollectionViewCell {
         chefNameLabel.text = mealItem.chefName
         mealTypeLabel.text = mealItem.mealType
         servingsLabel.text = mealItem.servings
-        recipePlaceHolder.image = UIImage(named: mealItem.image.rawValue)
+        recipePlaceHolder.downloadImage(url: mealItem.imageString, placeHolder: UIImage(named: "Recipe placeholder"))
     }
     
     
 }
 protocol MealCellDelgate{
-    func didPressedFavBtn()
+    func didPressedFavBtn(mealItem: MealItem)
 }

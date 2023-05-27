@@ -1,4 +1,5 @@
 import CoreData
+import UIKit
 
 protocol CoreDataManagerType {
     func insertFavouriteMeal(favouriteMeal: FavouriteMealModel)
@@ -8,16 +9,27 @@ protocol CoreDataManagerType {
 }
 
 class CoreDataManager: CoreDataManagerType {
-    var context: NSManagedObjectContext?
     
-    init(context: NSManagedObjectContext? = nil) {
-        self.context = context
+    var context: NSManagedObjectContext!
+    
+    init() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
     }
+    
+   // var context: NSManagedObjectContext?
+//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//    let context = appDelegate.persistentContainer.viewContext
+   // let context = NSManagedObjectContext
+    
+//    init(context: NSManagedObjectContext? = nil) {
+//        self.context = context
+//    }
     
     // MARK: Insert a favourite meal into CoreData
     
     func insertFavouriteMeal(favouriteMeal: FavouriteMealModel) {
-        let entity = NSEntityDescription.entity(forEntityName: "FavouriteMeal", in: context!)
+        let entity = NSEntityDescription.entity(forEntityName: "FavouriteMeal", in: context)
         let favouriteMealEntity = NSManagedObject(entity: entity!, insertInto: context)
         
         favouriteMealEntity.setValue(favouriteMeal.mealID, forKey: "mealID")
@@ -28,7 +40,7 @@ class CoreDataManager: CoreDataManagerType {
         favouriteMealEntity.setValue(favouriteMeal.mealImage, forKey: "mealImage")
         
         do {
-            try context!.save()
+            try context.save()
         } catch let error as NSError{
             print(error.localizedDescription)
         }
@@ -38,7 +50,7 @@ class CoreDataManager: CoreDataManagerType {
     
     func removeFavouriteMeal(for mealID: Int) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavouriteMeal")
-        let predicate = NSPredicate(format: "mealID == %@", mealID)
+        let predicate = NSPredicate(format: "mealID == %d", mealID)
         
         fetchRequest.predicate = predicate
         

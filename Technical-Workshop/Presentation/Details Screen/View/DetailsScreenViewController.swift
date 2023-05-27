@@ -193,11 +193,7 @@ extension DetailsScreenViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MealCollectionViewCell", for: indexPath) as! MealCollectionViewCell
          let currentMealItem = viewModel?.VMResults[indexPath.row]
-        let meal = MealItem(mealRecipe: currentMealItem?.name ?? "mealRecipe",
-                            chefName: currentMealItem?.sections?[0].name ?? "chefName",
-                            mealType: currentMealItem?.sections?[0].name ?? "sections",
-                            servings: "\(currentMealItem?.numServings ?? 0)",
-                            image: currentMealItem?.thumbnailURL ?? "")
+        let meal = MealItem(mealRecipe: currentMealItem?.name ?? "mealRecipe", chefName: currentMealItem?.sections?[0].name ?? "chefName", mealType: currentMealItem?.sections?[0].name ?? "sections", servings: "\(currentMealItem?.numServings ?? 0)", imageString: currentMealItem?.thumbnailURL ?? "", mealId: currentMealItem?.id ?? 1)
          cell.configure(mealItem: meal)
         return cell
     }

@@ -15,6 +15,9 @@ class FavoritesScreenViewController: UIViewController {
     var favouriteMeals: [FavouriteMealModel]?
     var viewModel: FavoritesScreenViewModelType!
     var mealID: Int?
+    private lazy var db: CoreDataManagerType = {
+        CoreDataManager()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +29,16 @@ class FavoritesScreenViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       
         if favouriteMeals?.count == 0 {
             favouriteMealsCollectionView.backgroundView = favouriteBackground
+        } else {
+            favouriteMealsCollectionView.backgroundView = .none
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        favouriteMeals = viewModel.getAllFavouriteMeals()
+        self.favouriteMealsCollectionView.reloadData()
     }
     
     func deleteMeal(with mealID: Int) {
@@ -47,13 +56,13 @@ class FavoritesScreenViewController: UIViewController {
             return nil
         }
         
-        let mealItem = MealItem(mealRecipe: mealName, chefName: chiefName, mealType: mealType, servings: mealServings, imageString: mealImage)
+        let mealItem = MealItem(mealRecipe: mealName, chefName: chiefName, mealType: mealType, servings: mealServings, imageString: mealImage, mealId: mealID)
         return mealItem
     }
     
 }
 
-extension FavoritesScreenViewController: UICollectionViewDataSource {
+extension FavoritesScreenViewController: UICollectionViewDataSource, MealCellDelgate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return favouriteMeals?.count ?? 0
@@ -67,34 +76,51 @@ extension FavoritesScreenViewController: UICollectionViewDataSource {
         let currentMeal = (favouriteMeals?[indexPath.row])!
         mealID = currentMeal.mealID
         cell.configure(mealItem: convertToMealItem(from: currentMeal)!)
-        
+        cell.currentMealItem = MealItem(mealRecipe: currentMeal.mealName ?? "", chefName: currentMeal.chiefName ?? "", mealType: currentMeal.mealType ?? "", servings: currentMeal.mealServings ?? "", imageString: currentMeal.mealImage ?? "", mealId: currentMeal.mealID ?? 1)
         return cell
     }
+    
+    func didPressedFavBtn(mealItem: MealItem) {
+        if !db.mealExists(for: mealItem.mealId){
+            db.insertFavouriteMeal(favouriteMeal: FavouriteMealModel(chiefName: mealItem.chefName, mealImage: mealItem.imageString, mealID: mealItem.mealId, mealType: mealItem.mealType, mealName: mealItem.mealRecipe, mealServings: mealItem.servings))
+        } else {
+            let alertController = UIAlertController(title: "Meal already exists", message: "The meal you selected already exists in your favorites", preferredStyle: .alert)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+                self.db.removeFavouriteMeal(for: mealItem.mealId)
+                DispatchQueue.main.async {
+                    self.favouriteMeals = self.viewModel.getAllFavouriteMeals()
+                    self.favouriteMealsCollectionView.reloadData()
+                    if self.db.getAllFavouriteMeals()?.count == 0 {
+                        self.favouriteMealsCollectionView.backgroundView = self.favouriteBackground
+                    }
+                }
+            })
+            let cancelAction = UIAlertAction(title: "Canel", style: .cancel)
+            alertController.addAction(cancelAction)
+            alertController.addAction(deleteAction)
+            present(alertController, animated: true)
+        }
+        
+    }
+    
+    
 }
 
 extension FavoritesScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let favouriteMeal = favouriteMeals?[indexPath.item]
-        // TODO: navigate to details screen
+        let detailsViewController = UIStoryboard(name: "DetailsScreenStoryboard", bundle: nil) .instantiateViewController(withIdentifier: "DetailsScreenViewController") as! DetailsScreenViewController
+        let detailsViewModel = DetailsScreenViewModel(id: String(favouriteMeal!.mealID!))
+        detailsViewController.viewModel = detailsViewModel
+        self.navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
 
 extension FavoritesScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.frame.width
-        let cellHeight: CGFloat = collectionView.frame.width * 0.25
-        return CGSize(width: cellWidth, height: cellHeight)
+        let width = favouriteMealsCollectionView.bounds.size.width
+        let height = favouriteMealsCollectionView.bounds.size.height * 0.3
+        return CGSize(width: width, height: height)
     }
 }
 
-extension FavoritesScreenViewController: MealCellDelgate{
-    func didPressedFavBtn() {
-        let alert = UIAlertController(title: "Confirm Deletion", message: "Are you sure you want to delete this meal?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: { (action) in
-            self.deleteMeal(with: self.mealID ?? 0)
-            self.favouriteMealsCollectionView.reloadData()
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-}
