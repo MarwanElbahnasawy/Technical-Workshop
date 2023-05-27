@@ -3,6 +3,7 @@
     <entity name="FavouriteMeal" representedClassName="FavouriteMeal" syncable="YES" codeGenerationType="class">
         <attribute name="chiefName" optional="YES" attributeType="String"/>
         <attribute name="mealID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="mealImage" optional="YES" attributeType="String"/>
         <attribute name="mealName" optional="YES" attributeType="String"/>
         <attribute name="mealServings" optional="YES" attributeType="String"/>
         <attribute name="mealType" optional="YES" attributeType="String"/>
