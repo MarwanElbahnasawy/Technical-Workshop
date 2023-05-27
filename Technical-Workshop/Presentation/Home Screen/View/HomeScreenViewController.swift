@@ -19,6 +19,8 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mealsCollectionView.register(UINib(nibName: Constants.mealCellNibAndIdentifierName, bundle: .main), forCellWithReuseIdentifier: Constants.mealCellNibAndIdentifierName)
+        self.tabBarController?.tabBar.tintColor = UIColor(named: "LikeButtonColor")
+                print("controller")
     }
 }
 
