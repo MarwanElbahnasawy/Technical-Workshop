@@ -2,14 +2,12 @@
 import Foundation
 
 // MARK: - Root
-
 struct Root: Codable {
     var count: Int?
     var results: [Result]?
 }
 
 // MARK: - Result
-
 struct Result: Codable {
     var description: String?
     var name: String?
@@ -23,6 +21,7 @@ struct Result: Codable {
     var videoURL: String?
     var id: Int?
     var recipes: [Recipe]?
+
     enum CodingKeys: String, CodingKey {
         case description
         case name
@@ -46,12 +45,13 @@ enum ResultAspectRatio: String, Codable {
 }
 
 // MARK: - Brand
-
 struct Brand: Codable {
     var name: String?
     var id: Int?
     var slug: String?
     var imageURL: String?
+    
+
     enum CodingKeys: String, CodingKey {
         case name, id, slug
         case imageURL = "image_url"
@@ -72,7 +72,6 @@ enum DraftStatus: String, Codable {
 }
 
 // MARK: - Instruction
-
 struct Instruction: Codable {
     var temperature: Int?
     var id, position: Int?
@@ -92,7 +91,6 @@ struct Instruction: Codable {
 
 
 // MARK: - Recipe
-
 struct Recipe: Codable {
     var slug: String?
     var createdAt: Int?
@@ -156,8 +154,13 @@ struct Recipe: Codable {
     }
 }
 
-// MARK: - Credit
 
+
+
+
+
+
+// MARK: - Credit
 struct Credit: Codable {
     var name: String?
     
@@ -172,11 +175,11 @@ enum OpType: String, Codable {
 }
 
 // MARK: - Rendition
-
 struct Rendition: Codable {
     var container: Container?
     var fileSize: Int?
     var url: String?
+ 
     var width: Int?
     var minimumBitRate: Int?
     var height: Int?
@@ -184,6 +187,7 @@ struct Rendition: Codable {
     var duration: Int?
     var bitRate: Int?
     var contentType: ContentType?
+    
     var maximumBitRate: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -196,9 +200,12 @@ struct Rendition: Codable {
         case duration
         case bitRate = "bit_rate"
         case contentType = "content_type"
+     
         case maximumBitRate = "maximum_bit_rate"
     }
 }
+
+
 
 enum Container: String, Codable {
     case mp4 = "mp4"
@@ -222,30 +229,29 @@ enum RenditionName: String, Codable {
 }
 
 // MARK: - Section
-
 struct Section: Codable {
     var name: String?
     var position: Int?
+    var components: [Component]?
 }
 
 // MARK: - Component
-
 struct Component: Codable {
     var extraComment: String?
-    var ingredient: Ingredient?
-    var id, position: Int?
+   // var ingredient: Ingredient?
+    
     var measurements: [Measurement]?
     var rawText: String?
 
     enum CodingKeys: String, CodingKey {
         case extraComment = "extra_comment"
-        case ingredient, id, position, measurements
+       // case ingredient
+        case measurements
         case rawText = "raw_text"
     }
 }
 
 // MARK: - Ingredient
-
 struct Ingredient: Codable {
     var displaySingular: String?
     var updatedAt: Int?
@@ -265,7 +271,6 @@ struct Ingredient: Codable {
 }
 
 // MARK: - Measurement
-
 struct Measurement: Codable {
     var unit: Unit?
     var quantity: String?
@@ -273,7 +278,6 @@ struct Measurement: Codable {
 }
 
 // MARK: - Unit
-
 struct Unit: Codable {
     var system: System?
     var name: Abbreviation?
@@ -378,7 +382,6 @@ enum System: String, Codable {
 }
 
 // MARK: - Tag
-
 struct Tag: Codable {
     var rootTagType: RootTagTypeEnum?
     var name: String?
@@ -415,13 +418,11 @@ enum RootTagTypeEnum: String, Codable {
 }
 
 // MARK: - Topic
-
 struct Topic: Codable {
     var name, slug: String?
 }
 
 // MARK: - TotalTimeTier
-
 struct TotalTimeTier: Codable {
     var tier, displayTier: String?
 
@@ -436,7 +437,6 @@ enum TypeEnum: String, Codable {
 }
 
 // MARK: - UserRatings
-
 struct UserRatings: Codable {
     var countPositive: Int?
     var score: Double?
