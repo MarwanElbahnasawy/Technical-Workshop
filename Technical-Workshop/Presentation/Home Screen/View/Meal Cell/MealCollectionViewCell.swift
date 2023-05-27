@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MealCollectionViewCell: UICollectionViewCell {
     
@@ -16,6 +17,7 @@ class MealCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var chefNameLabel: UILabel!
     @IBOutlet weak var mealRecipeLabel: UILabel!
     @IBOutlet weak var recipePlaceHolder: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,12 +34,12 @@ class MealCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(mealItem: MealItem){
-        mealRecipeLabel.text = mealItem.mealRecipe
-        chefNameLabel.text = mealItem.chefName
-        mealTypeLabel.text = mealItem.mealType
-        servingsLabel.text = mealItem.servings
-        recipePlaceHolder.image = UIImage(named: mealItem.image.rawValue)
-    }
+            mealRecipeLabel.text = mealItem.mealRecipe
+            chefNameLabel.text = mealItem.chefName
+            mealTypeLabel.text = mealItem.mealType
+            servingsLabel.text = mealItem.servings
+            recipePlaceHolder.kf.setImage(with: URL(string: mealItem.imageString), placeholder: UIImage(named: MealImage.recipePlaceholder.rawValue))
+        }
     
     
 }

@@ -128,6 +128,7 @@
             <size key="customSize" width="804" height="296"/>
             <connections>
                 <outlet property="chefNameLabel" destination="FgB-m8-b6B" id="23R-pz-7na"/>
+                <outlet property="likeButton" destination="CJd-Ks-HOw" id="J6e-AF-7te"/>
                 <outlet property="mealRecipeLabel" destination="dEI-nr-XNm" id="cpj-ga-YwU"/>
                 <outlet property="mealTypeLabel" destination="0Ro-0C-OmY" id="nKn-gx-tBD"/>
                 <outlet property="recipePlaceHolder" destination="1iX-cQ-jTS" id="EUk-g6-UN4"/>

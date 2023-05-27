@@ -12,13 +12,13 @@ struct MealItem {
     let chefName : String
     let mealType : String
     let servings : String
-    let image : MealImage
+    let imageString : String
     
-    init(mealRecipe: String, chefName : String, mealType : String, servings : String, image: MealImage) {
+    init(mealRecipe: String, chefName : String, mealType : String, servings : String, imageString: String) {
         self.mealRecipe = mealRecipe
         self.chefName = chefName
         self.mealType = mealType
         self.servings = servings
-        self.image = image
+        self.imageString = imageString
     }
 }
