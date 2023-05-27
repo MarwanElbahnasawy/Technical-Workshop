@@ -9,32 +9,43 @@ import Foundation
 import Alamofire
 
 class DetailsScreenViewModel: DetailsScreenViewModelType {
-    
+    var id: String
     var bindResultsToViewController : (()->()) = {}
     var bindItemToViewController : (()->()) = {}
-    var VMResultItem : Result!{
+    var VMResultItem : Result?{
         didSet {
             bindItemToViewController() // call
         }
     }
-    var VMResults : [Result]!{
+    var VMResults : [Result] = [] {
         didSet {
             bindResultsToViewController() // call
         }
     }
     
-    func callListSimilaritiesApi( recipe_id :String ) {
-        let param : [String: String] = ["recipe_id": recipe_id]
+    init(id: String){
+        self.id = id
+    }
+   
+    func getItem(atIndexPath: IndexPath)->Result?{
+        return VMResults[atIndexPath.row]
+    }
+    
+    func getItemsCount()->Int?{
+        return VMResults.count
+    }
+    
+    func callListSimilaritiesApi() {
+        let param : [String: String] = ["recipe_id": id]
         APIServices.instance.getData(route: .list, method: .get, params: param, encoding: URLEncoding.default) {  [weak self] (data: Root?, error) in
-            self?.VMResults = data?.results
+            self?.VMResults = data?.results ?? []
         }
     }
 
-    func callItemApi( recipe_id :String ) {
-        let param : [String: String] = ["recipe_id": recipe_id]
-        APIServices.instance.getData(route: .list, method: .get, params: param, encoding: URLEncoding.default) {  [weak self] (data: Root?, error) in
-            self?.VMResultItem = data?.results?.first
+    func callItemApi() {
+        let param : [String: String] = ["id": id]
+        APIServices.instance.getData(route: .getMoreInfo, method: .get, params: param, encoding: URLEncoding.default) {  [weak self] (data: Result?, error) in
+            self?.VMResultItem = data
         }
     }
-
 }

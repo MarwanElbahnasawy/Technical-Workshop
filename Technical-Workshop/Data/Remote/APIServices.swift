@@ -17,12 +17,17 @@ enum Route {
     
     case listSimilarities
     case list
+    case getMoreInfo
     var description: String {
         switch self {
         case .listSimilarities:
             return "\(Route.baseUrl)/list-similarities"
         case .list:
             return "\(Route.baseUrl)/list"
+        case .getMoreInfo:
+            return "\(Route.baseUrl)/get-more-info"
+            
+            
         }
     }
 }
@@ -33,7 +38,7 @@ class APIServices: NetworkManagerProtocol {
     static let instance = APIServices()
  
     let header : [String: String] = [
-        "X-RapidAPI-Key": "d67902112amshdb94118d744b893p18293bjsn4d056e614259",
+        "X-RapidAPI-Key": "33f10264d0msh425dbe23a22f271p13693fjsn8d1557eb2440",
         "X-RapidAPI-Host": "tasty.p.rapidapi.com"
     ]
     

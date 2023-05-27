@@ -8,10 +8,13 @@
 import Foundation
 
 protocol DetailsScreenViewModelType {
-    func callItemApi( recipe_id :String )
-    func callListSimilaritiesApi( recipe_id :String )
-    var bindResultsToViewController : (()->()) { get set }
-    var bindItemToViewController : (()->()) { get set }
-    var VMResultItem : Result! { get set }
-    var VMResults : [Result]! { get set }
+    var id: String { get set }
+    var bindResultsToViewController: (()->()) { get set }
+    var bindItemToViewController: (()->()) { get set }
+    var VMResultItem: Result? { get set }
+    var VMResults: [Result] { get set }
+    func callItemApi()
+    func callListSimilaritiesApi()
+    func getItemsCount()->Int?
+    func getItem(atIndexPath: IndexPath)->Result?
 }
