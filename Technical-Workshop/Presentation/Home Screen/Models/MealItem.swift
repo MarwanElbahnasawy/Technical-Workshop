@@ -12,9 +12,9 @@ struct MealItem {
     let chefName : String
     let mealType : String
     let servings : String
-    let image : MealImage
+    let image : String
     
-    init(mealRecipe: String, chefName : String, mealType : String, servings : String, image: MealImage) {
+    init(mealRecipe: String, chefName : String, mealType : String, servings : String, image: String) {
         self.mealRecipe = mealRecipe
         self.chefName = chefName
         self.mealType = mealType

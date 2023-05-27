@@ -8,7 +8,6 @@ import Foundation
 import Lottie
 
 extension AnimationView{
-    
     func setUpMyView(name : String){
         self.animation = .named(name)
         self.contentMode = .scaleAspectFit
