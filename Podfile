@@ -3,8 +3,8 @@
 target 'Technical-Workshop' do
    pod 'Kingfisher', '~> 7.0'
    pod 'SnackBar.swift'
-   pod 'lottie-ios'
    pod 'Alamofire'
+   pod 'lottie-ios'
 
 
   use_frameworks!
