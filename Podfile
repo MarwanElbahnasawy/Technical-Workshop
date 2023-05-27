@@ -1,14 +1,11 @@
- platform :ios, '13.0'
+ platform :ios, '9.0'
 
 target 'Technical-Workshop' do
    pod 'Kingfisher', '~> 7.0'
-   pod 'ReachabilitySwift'
-   pod 'RxSwift'
-   pod 'RxCocoa'
    pod 'SnackBar.swift'
-pod 'Alamofire'
-pod 'IQKeyboardManagerSwift'
-pod 'lottie-ios'
+   pod 'lottie-ios'
+   pod 'Alamofire'
+
 
   use_frameworks!
   # Pods for Technical-Workshop

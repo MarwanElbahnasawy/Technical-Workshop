@@ -1,7 +1,7 @@
 //
-//  DispatchQueue+Alamofire.swift
+//  Alamofire.swift
 //
-//  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014-2021 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,14 +24,17 @@
 
 import Dispatch
 import Foundation
+#if canImport(FoundationNetworking)
+@_exported import FoundationNetworking
+#endif
 
-extension DispatchQueue {
-    static var userInteractive: DispatchQueue { return DispatchQueue.global(qos: .userInteractive) }
-    static var userInitiated: DispatchQueue { return DispatchQueue.global(qos: .userInitiated) }
-    static var utility: DispatchQueue { return DispatchQueue.global(qos: .utility) }
-    static var background: DispatchQueue { return DispatchQueue.global(qos: .background) }
+// Enforce minimum Swift version for all platforms and build systems.
+#if swift(<5.5)
+#error("Alamofire doesn't support Swift versions below 5.5.")
+#endif
 
-    func after(_ delay: TimeInterval, execute closure: @escaping () -> Void) {
-        asyncAfter(deadline: .now() + delay, execute: closure)
-    }
-}
+/// Reference to `Session.default` for quick bootstrapping and examples.
+public let AF = Session.default
+
+/// Current Alamofire version. Necessary since SPM doesn't use dynamic libraries. Plus this will be more accurate.
+let version = "5.7.1"

@@ -1,54 +1,32 @@
 PODS:
-  - Alamofire (5.7.1)
-  - IQKeyboardManagerSwift (6.5.11)
+  - Alamofire (4.9.1)
   - Kingfisher (7.6.2)
   - lottie-ios (4.2.0)
-  - ReachabilitySwift (5.0.0)
-  - RxCocoa (6.5.0):
-    - RxRelay (= 6.5.0)
-    - RxSwift (= 6.5.0)
-  - RxRelay (6.5.0):
-    - RxSwift (= 6.5.0)
-  - RxSwift (6.5.0)
   - SnackBar.swift (0.1.0):
     - SnapKit
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
   - Alamofire
-  - IQKeyboardManagerSwift
   - Kingfisher (~> 7.0)
   - lottie-ios
-  - ReachabilitySwift
-  - RxCocoa
-  - RxSwift
   - SnackBar.swift
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - IQKeyboardManagerSwift
     - Kingfisher
     - lottie-ios
-    - ReachabilitySwift
-    - RxCocoa
-    - RxRelay
-    - RxSwift
     - SnackBar.swift
     - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
-  IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
-  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
-  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
-  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnackBar.swift: 79ea4df13ea9e6633137dd6acbd490534d26440d
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 68967a9ea3fc289896412814dd2223fcd473e6ba
+PODFILE CHECKSUM: f67ffea7e7822cc6c04f92df7bc66a219f298dc0
 
 COCOAPODS: 1.12.0
