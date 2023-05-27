@@ -1,122 +1,109 @@
 import XCTest
 @testable import Technical_Workshop
 
-class FavouriteMealViewModelTests: XCTestCase {
+class FavoritesScreenViewModelTests: XCTestCase {
     
-    var favouriteMealManagerMock: FavouriteMealManagerMock!
-    var favouriteMealViewModel: FavoritesScreenViewModel!
+    var viewModel: FavoritesScreenViewModelType!
+    var coreDataManager: CoreDataManagerType!
     
     override func setUp() {
         super.setUp()
-        favouriteMealManagerMock = FavouriteMealManagerMock()
-        favouriteMealViewModel = FavoritesScreenViewModel(favouriteMealManager: favouriteMealManagerMock as! CoreDataManagerType)
+        coreDataManager = MockCoreDataManager()
+        viewModel = FavoritesScreenViewModel(favouriteMealManager: coreDataManager)
     }
     
     override func tearDown() {
-        favouriteMealManagerMock = nil
-        favouriteMealViewModel = nil
+        coreDataManager = nil
+        viewModel = nil
         super.tearDown()
     }
     
     func testInsertFavouriteMeal() {
-        // Given
-        let favouriteMeal = FavouriteMealModel(chiefName: "John Doe",
-                                               mealID: 1,
-                                               mealType: "Breakfast",
-                                               mealName: "Pancakes",
-                                               mealServings: "2")
-        
-        // When
-        favouriteMealViewModel.insertFavouriteMeal(favouriteMeal: favouriteMeal)
-        
-        // Then
-        XCTAssertTrue(favouriteMealManagerMock.insertFavouriteMealCalled)
+        let favouriteMeal = FavouriteMealModel(
+            chiefName: "Ahmad",
+            mealImage: "",
+            mealID: 1,
+            mealType: "Dinner",
+            mealName: "Koshary",
+            mealServings: "2")
+        viewModel.insertFavouriteMeal(favouriteMeal: favouriteMeal)
+        let favouriteMeals = coreDataManager.getAllFavouriteMeals()
+        XCTAssertEqual(favouriteMeals?.count, 1)
     }
     
     func testRemoveFavouriteMeal() {
-        // Given
-        let mealID = 1
+        let favouriteMeal = FavouriteMealModel(
+            chiefName: "Ahmad",
+            mealImage: "",
+            mealID: 1,
+            mealType: "Dinner",
+            mealName: "Koshary",
+            mealServings: "2")
+        viewModel.insertFavouriteMeal(favouriteMeal: favouriteMeal)
         
-        // When
-        favouriteMealViewModel.removeFavouriteMeal(for: mealID)
-        
-        // Then
-        XCTAssertTrue(favouriteMealManagerMock.removeFavouriteMealCalled)
-        XCTAssertEqual(favouriteMealManagerMock.removedMealID, mealID)
+        viewModel.removeFavouriteMeal(for: 1)
+        let favouriteMeals = coreDataManager.getAllFavouriteMeals()
+        XCTAssertEqual(favouriteMeals?.count, 0)
     }
     
     func testGetAllFavouriteMeals() {
-        // Given
-        let favouriteMeals = [FavouriteMealModel(chiefName: "John Doe",
-                                                 mealID: 1,
-                                                 mealType: "Breakfast",
-                                                 mealName: "Pancakes",
-                                                 mealServings: "2"),
-                              FavouriteMealModel(chiefName: "Jane Smith",
-                                                 mealID: 2,
-                                                 mealType: "Lunch",
-                                                 mealName: "Salad",
-                                                 mealServings: "1")]
+        let favouriteMeal1 = FavouriteMealModel(
+            chiefName: "Ahmad",
+            mealImage: "Data()",
+            mealID: 1,
+            mealType: "Dinner",
+            mealName: "Koshary",
+            mealServings: "2")
+        viewModel.insertFavouriteMeal(favouriteMeal: favouriteMeal1)
         
-        favouriteMealManagerMock.allFavouriteMeals = favouriteMeals
+        let favouriteMeal2 = FavouriteMealModel(
+            chiefName: "Mahmoud",
+            mealImage: "",
+            mealID: 2,
+            mealType: "Dinner",
+            mealName: "Koshary",
+            mealServings: "3")
+        viewModel.insertFavouriteMeal(favouriteMeal: favouriteMeal2)
         
-        // When
-        let result = favouriteMealViewModel.getAllFavouriteMeals()
-        
-        // Then
-        XCTAssertTrue(favouriteMealManagerMock.getAllFavouriteMealsCalled)
+        let favouriteMeals = viewModel.getAllFavouriteMeals()
+        XCTAssertEqual(favouriteMeals?.count, 2)
     }
     
     func testMealExists() {
-        // Given
-        let mealID = 1
-        favouriteMealManagerMock.mealExistsReturnValue = true
+        let favouriteMeal = FavouriteMealModel(
+            chiefName: "Ahmad",
+            mealImage: "",
+            mealID: 1,
+            mealType: "Dinner",
+            mealName: "Koshary",
+            mealServings: "2")
+        viewModel.insertFavouriteMeal(favouriteMeal: favouriteMeal)
         
-        // When
-        let result = favouriteMealViewModel.mealExists(for: mealID)
-        
-        // Then
-        XCTAssertTrue(favouriteMealManagerMock.mealExistsCalled)
-        XCTAssertEqual(favouriteMealManagerMock.checkedMealID, mealID)
-        XCTAssertTrue(result)
+        XCTAssertTrue(viewModel.mealExists(for: 1))
+        XCTAssertFalse(viewModel.mealExists(for: 2))
     }
 }
 
-// MARK: - FavouriteMealManagerMock
-
-class FavouriteMealManagerMock: FavoritesScreenViewModelType {
+class MockCoreDataManager: CoreDataManagerType {
     
-    var insertFavouriteMealCalled = false
-    var insertedFavouriteMeal: FavouriteMealModel?
-    
-    var removeFavouriteMealCalled = false
-    var removedMealID: Int?
-    
-    var getAllFavouriteMealsCalled = false
-    var allFavouriteMeals: [FavouriteMealModel] = []
-    
-    var mealExistsCalled = false
-    var checkedMealID: Int?
-    var mealExistsReturnValue = false
+    var favouriteMeals: [FavouriteMealModel]?
     
     func insertFavouriteMeal(favouriteMeal: FavouriteMealModel) {
-        insertFavouriteMealCalled = true
-        insertedFavouriteMeal = favouriteMeal
+        if favouriteMeals == nil {
+            favouriteMeals = []
+        }
+        favouriteMeals?.append(favouriteMeal)
     }
     
     func removeFavouriteMeal(for mealID: Int) {
-        removeFavouriteMealCalled = true
-        removedMealID = mealID
+        favouriteMeals = favouriteMeals?.filter { $0.mealID != mealID }
     }
     
-    func getAllFavouriteMeals() -> [FavouriteMealModel] {
-        getAllFavouriteMealsCalled = true
-        return allFavouriteMeals
+    func getAllFavouriteMeals() -> [FavouriteMealModel]? {
+        return favouriteMeals
     }
     
     func mealExists(for mealID: Int) -> Bool {
-        mealExistsCalled = true
-        checkedMealID = mealID
-        return mealExistsReturnValue
+        return favouriteMeals?.contains(where: { $0.mealID == mealID }) ?? false
     }
 }
